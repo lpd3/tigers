@@ -1,12 +1,21 @@
 <HTML>
   <head><title>Dynamic Web Page</title> 
     <script> function random_generator() {
+        /* The secret number is 1809. I am restricted to numbers of 5 to 8 digits. And the value must be a multiple of the secret
+        value. So the random number which is the multiplier must be between 6 and 55,279 inclusive. */
+        var raw_random = parseInt((Math.random() * (55279 - 6 + 1)), 10) + 6;
+        var true_random = raw_random * 1809;
+        return true_random;
+      }
+      function show_number() {
+        document.getElementByID("random_number").innerHTML = random_generator();
+      }
         
     </script>
   </head>
   <body>
     <p>
-      Random Value = 
+      Random Value = <b id="random_number"></b>
     </p>
     <p><a href="./index.html">Back</a>
     </p>
