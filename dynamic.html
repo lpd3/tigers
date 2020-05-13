@@ -7,12 +7,13 @@
         var true_random = raw_random * 1809;
         return true_random;
       }
-     
+     function display_value() {
       document.getElementByID("random_number").innerHTML = random_generator();
+     }
         
     </script>
   </head>
-  <body>
+  <body <script>onLoad="display_value"</script>>
     <p>
       Random Value = <b id="random_number"></b>
     </p>
